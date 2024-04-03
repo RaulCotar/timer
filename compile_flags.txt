@@ -1,0 +1,10 @@
+-std=c2x
+-Wall
+-Wextra
+-Wpedantic
+-s
+-O2
+#-Og
+#-ggdb3
+#-fsanitize=address
+#-fsanitize=undefined
