@@ -2,6 +2,7 @@
 -Wall
 -Wextra
 -Wpedantic
+-fbuiltin
 -s
 -O2
 #-Og

@@ -1,4 +1,4 @@
-/*
+/* This is not valid afont file, it's a remnant of the old artfont.
 ┏━┓
 ┃ ┃
 ┣┳┫
@@ -67,7 +67,7 @@ static char const *const artfont_boxdraw[15][artfont_boxdraw_height] = {
 	{
 		"   ",
 		"┏┳┓",
-		"┃ ┃",
+		"╹ ╹",
 	},
 	{
 		"┏┓",
