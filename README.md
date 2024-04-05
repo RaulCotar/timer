@@ -9,7 +9,7 @@ Usage: timer [OPTIONS] [TIME]
 Simple command line stopwatch and timer.(!)
 Behaves like a stopwatch if no TIME is given.
 
-  -a, --art                     use ASCII art for display(!)
+  -a, --art                     use ASCII art for display
   -f, --fullform                use hh:mm:ss:lll format
   -R, --resolution=[h|m|s|l]    set hour/minute/second/millisecond resolution
   -r, --resume                  resume last session(!)
@@ -24,7 +24,7 @@ Examples:
   timer 1m30s   one and a half minute timer with 1s resolution
   timer -a      stopwatch with ASCII art formatting and auto color
 
-timer 0.9.1-alpha2
+timer 0.9.2-alpha3
 Written by Raul Cotar, licensed under GPLv3.
 Source, documentation and support: <https://github.com/RaulCotar/timer>
 ```

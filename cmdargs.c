@@ -48,7 +48,7 @@ int cmdargs(int const argc, char const *argv[argc]) {
 
 #define XX "\x1b[31m(!)\x1b[39m"
 static char const *const ver_nr =
-	"timer 0.9.1-alpha2\n"
+	"timer 0.9.2-alpha3\n"
 	"Written by Raul Cotar, licensed under GPLv3.\n"
 	"Source, documentation and support: <https://github.com/RaulCotar/timer>";
 static char const *const help_msg =
