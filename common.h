@@ -30,6 +30,6 @@ extern unsigned afont_h, afont_w;
 extern void read_afont(char const *filename);
 
 [[gnu::leaf]]
-void artprint(char const *str);
+extern void artprint(char const *str);
 
 #endif /* _COMMON_H_ */

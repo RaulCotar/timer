@@ -1,6 +1,8 @@
 timer - a simple cli stopwatch and timer
 ===
 
+The goal is to have a simple and lightweight interactive timer/stopwatch in the terminal with no external dependencies. Simplicity is favoured over high precision, and the feature set will be built around my day-to-day use of this tool.
+
 ```
 $ ./timer --help
 Usage: timer [OPTIONS] [TIME]
@@ -28,10 +30,6 @@ Source, documentation and support: <https://github.com/RaulCotar/timer>
 ```
 
 ## TODO
-- `-o OFS`
-- `TIME`
+- countdown mode
 - interactive commands
-
-## Quirks
-- some things are not implemented yet
-- `timer` doesn't clear any styling that it does not set itself. This means that you can set some styling yourself before calling `timer`, for example: `echo -ne '\x1b[1;7;32m' && timer` will result in the timer displayed in bold on a green background.
+- persistent session

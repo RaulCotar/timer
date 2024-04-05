@@ -22,6 +22,7 @@ int cmdargs(int const argc, char const *argv[argc]) {
 			switch (argv[a][f]) {
 			case 'a':
 				opt.style = S_ART;
+				read_afont("patorjk_small.afont");
 				break;
 			case 'f':
 				opt.fmt = F_FULL;
@@ -54,7 +55,7 @@ static char const *const help_msg =
 	"Usage: timer [OPTIONS] [TIME]\n"
 	"Simple command line stopwatch and timer."XX"\n"
 	"Behaves like a stopwatch if no \x1b[3mTIME\x1b[23m is given.\n\n"
-	"  -a, --art\t\t\tuse ASCII art for display"XX"\n"
+	"  -a, --art\t\t\tuse ASCII art for display\n"
 	"  -f, --fullform\t\tuse \x1b[3mhh\x1b[23m:\x1b[3mmm\x1b[23m:\x1b[3mss\x1b[23m:\x1b[3mlll\x1b[23m format\n"
 	"  -R, --resolution=[\x1b[3mh\x1b[23m|\x1b[3mm\x1b[23m|\x1b[3;4ms\x1b[23;24m|\x1b[3ml\x1b[23m]\tset hour/minute/second/millisecond resolution\n"
 	"  -r, --resume\t\t\tresume last session"XX"\n"
