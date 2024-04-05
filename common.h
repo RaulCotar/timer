@@ -2,7 +2,7 @@
 #define _COMMON_H_
 #include <stdio.h> // IWYU pragma: export
 
-#define panic(MSG, ...) {fputs(COLP, stdout); printf(MSG __VA_OPT__(,) __VA_ARGS__); puts(COLR); return -1;}
+#define panic(MSG, ...) {fputs(COLP, stdout); printf(MSG __VA_OPT__(,) __VA_ARGS__); puts(COLR);}
 #define worry(MSG, ...) {fputs(COLW, stdout); printf(MSG __VA_OPT__(,) __VA_ARGS__); puts(COLR);}
 
 #define strlen(STR)				__builtin_strlen((STR))
@@ -20,7 +20,8 @@ extern struct options {
 	enum:char{F_SHORT, F_FULL} fmt;
 	enum:char{S_NORMAL, S_ART} style;
 	bool countdown;
-	long offset;
+	long duration;
+	char const *dyingwish;
 } opt;
 
 extern char *afont;

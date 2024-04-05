@@ -1,5 +1,6 @@
 #define _POSIX_C_SOURCE 199309L // for nanosleep
 #include <time.h>
+#include <stdlib.h> // for system(dyingwish)
 #include "common.h"
 
 [[gnu::const]]
@@ -50,12 +51,15 @@ int main(int argc, char *argv[argc]) {
 		case R_SECOND:	interval = (struct timespec){1, 0}; break;
 		case R_MILLIS:	interval = (struct timespec){0, 1'000'000}; break;
 	}
+	struct timespec const ttime = {opt.duration / 1000, opt.duration % 1000};
 
 	do {
 		struct timespec ctime;
 		timespec_get(&ctime, TIME_UTC);
 
-		struct timespec const dt = timespec_dif(ctime, stime);
+		struct timespec dt = timespec_dif(ctime, stime);
+		if (opt.countdown)
+			dt = timespec_dif(ttime, dt);
 		long const h = dt.tv_sec / 3600;
 		long const m = dt.tv_sec % 3600 / 60;
 		long const s = dt.tv_sec % 60;
@@ -65,7 +69,13 @@ int main(int argc, char *argv[argc]) {
 			artprint(str);
 		else
 			printf("now:%s\x1b[K\r", str), fflush(stdout);
+
+		if (opt.countdown && (dt.tv_sec < 0 || dt.tv_nsec < 0))
+			break;
 	} while (!nanosleep(&interval, NULL));
+	
+	if (opt.dyingwish)
+		putchar('\n'), system(opt.dyingwish);
 
 	return 0;
 }

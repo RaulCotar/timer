@@ -34,7 +34,7 @@ static inline unsigned afont_sym(char c) {
 	case ':': return 63;
 	case '+': return 64;
 	case '-': return 65;
-	default: panic("Char '%c' not in afont!", c);
+	default: panic("Char '%c' not in afont!", c); return 62;
 	}
 }
 
