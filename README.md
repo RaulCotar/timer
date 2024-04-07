@@ -9,28 +9,33 @@ Usage: timer [OPTIONS] [TIME]
 Simple command line stopwatch and timer.
 Behaves like a stopwatch if no TIME is given.
 
-  -a, --art                     use ASCII art for display
-  -c, --cmd=CMD                 run the given command in sh at program exit
-  -f, --fullform                use hh:mm:ss:lll format
-  -R, --resolution=h|m|s|l      set hour/minute/second/millisecond resolution
-  -r, --resume                  resume last session(!)
-      --help                    print this help message and exit
-      --version                 print version and exit
+  -a, --art                 use ASCII art for display
+  -c, --endcmd=CMD		      run the given command in sh at program exit
+  -f, --fullform		        use hh:mm:ss:lll format
+  -n, --no-interact		      run in non-interactive mode
+  -R, --resolution=RES		  set timer resolution (default: 1s)
+  -r, --resume			        resume last session(!)
+      --help		  	        print this help message and exit
+      --version			        print version and exit
 
-TIME is specified as: ([[:uint:]][hmsl])+
+TIME and RES are specified as: ([[:uint:]][hmsl])+
 
 Examples:
   timer -Rlf    stopwatch with 1ms resolution displayed in full format
   timer 1m30s   one and a half minute timer with 1s resolution
   timer -a      stopwatch with ASCII art formatting and auto color
 
-timer 0.9.3-alpha4
+timer 0.9.4-alpha5
 Written by Raul Cotar, licensed under GPLv3.
 Source, documentation and support: <https://github.com/RaulCotar/timer>
 ```
 
+## Use cases
+- I will mostly use this as a stopwatch with minute granularity to time the different ways I spend time in front of the computer. The ability to suspend the process and resume it only when I wanto to check the time comes in handy.
+- Another use case is showing off the ASCII art rendering with the full format - for the cool factor.
+- One possibility I want to explorte is the --cmd flag, maybe that that will come in handy some time.
+
 ## TODO
-- countdown mode
 - interactive commands
 - persistent session
 
